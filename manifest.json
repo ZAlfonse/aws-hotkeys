@@ -1,0 +1,48 @@
+{
+    "name": "AWS Console Hotkeys",
+    "version": "0.1",
+    "description": "Hotkeys for the AWS console!",
+    "permissions": [
+        "activeTab"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.aws.amazon.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "commands": {
+        "navigate": {
+            "suggested_key": {
+                "default": "Ctrl+T",
+                "mac": "MacCtrl+T"
+            },
+            "description": "Open Services Menu"
+        },
+        "ec2": {
+            "suggested_key": {
+                "default": "Ctrl+E",
+                "mac": "MacCtrl+E"
+            },
+            "description": "Navigate to EC2 Console"
+        },
+        "s3": {
+            "suggested_key": {
+                "default": "Ctrl+S",
+                "mac": "MacCtrl+S"
+            },
+            "description": "Navigate to s3 Console"
+        }
+    },
+    "manifest_version": 2
+}
